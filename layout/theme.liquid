@@ -17,7 +17,7 @@
   {{ 'meanmenu.css' | asset_url | stylesheet_tag }}
   {{ 'jquery.fancybox.min.css' | asset_url | stylesheet_tag }}
   {{ 'audioplayer.css' | asset_url | stylesheet_tag }}
-  {{ 'fontawesome-all.min' | asset_url | stylesheet_tag }}
+  {{ 'fontawesome-all.min.css' | asset_url | stylesheet_tag }}
   {{ 'jquery-ui.css' | asset_url | stylesheet_tag }}
   {{ 'slick.css' | asset_url | stylesheet_tag }}
   {{ 'nice-select.css' | asset_url | stylesheet_tag }}
@@ -33,6 +33,7 @@
 
 <body>
   <main role="main">
+    {% section 'header' %}
     {{ content_for_layout }}
   </main>
 

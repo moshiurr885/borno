@@ -1,0 +1,238 @@
+<header>
+    <div id="header-sticky" class="header-area header-area1 header-transparent">
+        <div class="header header-padding ml-185 mr-185">
+            <div class="container-fluid">
+                <div class="header-mega p-relative">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col-xl-2  col-lg-2 col-md-3 col-sm-6 col-7 pr-0 d-flex align-items-center">
+                            <div class="logo">
+                                <a href="{{shop.url}}" class="d-block" data-toggle="tooltip" data-selector="true"
+                                    data-placement="bottom" title="{{shop.title}}">
+                                    {% if section.settings.logo != blank %}
+                                    <img src="{{section.settings.logo | image_url}}" alt="{{shop.title}}">
+                                    {% else %}
+                                    <img src="{{'logo.png' | asset_url}}" alt="{{shop.title}}">
+                                    {% endif %}
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /col -->
+                        <div
+                            class="col-xl-6 col-lg-7 col-md-1 col-sm-1 col-1 d-none pr-0 pl-0 pl-lg-15 d-flex align-items-center justify-content-xl-start justify-content-center position-static">
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                    <ul class="d-block">
+
+                                        {% if section.settings.header_menu.links != blank %}
+                                        {% for menu in section.settings.header_menu.links %}
+                                        <li class="has-dropdown">
+                                            <a href="{{menu.url}}">{{ menu.title }}
+                                                {% if menu.links.size > 0 %}
+                                                <i class="far fa-angle-down"></i>
+                                                {% endif %}
+                                            </a>
+                                            {% if menu.links.size > 0 %}
+                                            <ul class="submenu">
+                                                {% for submenu in menu.links %}
+                                                <li>
+                                                    <a href="{{submenu.url}}">{{ submenu.title }}</a>
+                                                </li>
+                                                {% endfor %}
+
+                                            </ul>
+                                            {% endif %}
+                                        </li>
+                                        {% endfor %}
+
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /main-menu -->
+                        </div>
+                        <!-- /col -->
+                        <div class="col-xl-4 col-lg-3 col-md-8 col-sm-5 col-4">
+                            <div class="header-right d-flex justify-content-end align-items-center">
+                                {% if section.settings.serach_enable %}
+                                <div class="header-search position-relative d-none d-xl-block" data-toggle="tooltip"
+                                    data-selector="true" data-placement="bottom" title="Search">
+                                    <input type="text" placeholder="Search" class="border-0 pl-25 theme-color">
+                                    <span class="position-absolute black-color">
+                                        <span>
+                                            <i class="far fa-search"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                                {% endif %}
+                                {% if section.settings.cart_enable %}
+                                <ul>
+                                    <li class="h-shop position-relative ml-30">
+                                        <div class="header-shopping-cart position-relative">
+                                            <span class="dark-black-color" data-toggle="tooltip" data-selector="true"
+                                                data-placement="bottom" title="Add to cart">
+                                                <span>
+                                                    <i class="far fa-shopping-cart"></i>
+                                                </span>
+                                            </span>
+                                            <span class="s-count position-absolute theme-bg white text-center">2</span>
+                                        </div>
+                                        <div
+                                            class="header-shopping-cart-details position-absolute bg-white border-gray pl-30 pr-30 pt-35 pb-60">
+                                            <div class="h-shop-cart-contetn over-x-hidden over-y-scroll">
+                                                <ul class="d-flex pb-10 border-b-light-gray">
+                                                    <li class="h-shop-cart-img pl-0">
+                                                        <a class="d-block" href="product-details.html"><img
+                                                                src="images/product/product10.jpg" alt=""></a>
+                                                    </li>
+                                                    <li class="pl-3">
+                                                        <h6 class="single-product-name pb-1">
+                                                            <a href="product-details.html">Blossom Porcelain Side
+
+                                                                Plates</a>
+                                                        </h6>
+                                                        <span class="primary-color">1<span>x</span>$320.00</span>
+                                                    </li>
+                                                    <li class="s-p-remove px-1 pl-0">
+                                                        <span>x</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="d-flex pt-20 pb-15 border-b-light-gray">
+                                                    <li class="h-shop-cart-img pl-0">
+                                                        <a class="d-block" href="product-details.html"><img
+                                                                src="images/product/product2.jpg" alt=""></a>
+                                                    </li>
+                                                    <li class="pl-3">
+                                                        <h6 class="single-product-name pb-1">
+                                                            <a href="product-details.html">Chair living room
+
+                                                                fiberglass</a>
+                                                        </h6>
+                                                        <span class="primary-color">1<span>x</span>$120.00</span>
+                                                    </li>
+                                                    <li class="s-p-remove px-1 pl-0">
+                                                        <span>x</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="s-sub-t mt-2 mb-15">
+                                                <span class="primary-color">Subtotal:</span>
+                                                <span class="primary-color float-right">
+                                                    $440.00</span>
+                                            </div>
+                                            <div class="d-sm-flex justify-content-between">
+                                                <a href="cart.html"
+                                                    class="web-btn d-inline-block text-uppercase primary-color gray-border2 position-relative over-hidden pl-20 pr-20 pt-10 pb-10 mt-10">view
+
+                                                    cart<span class="pl-1">
+                                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                                    </span>
+                                                </a>
+                                                <a href="checkout.html"
+                                                    class="web-btn d-inline-block text-uppercase theme-bg border-theme02 position-relative over-hidden pl-20 pr-20 pt-10 pb-10 mt-10 white">checkout<span
+                                                        class="pl-1">
+                                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /header-shopping-cart -->
+                                    </li>
+                                </ul>
+                                {% endif %}
+                                {% if section.settings.wishlist_enable %}
+                                <ul class="header-wishlist pl-2 d-none d-md-block">
+                                    <li class="position-relative">
+                                        <a href="wishlist.html" data-toggle="tooltip" data-selector="true"
+                                            data-placement="bottom" title="View wishlist" class="dark-black-color">
+                                            <span>
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                {% endif %}
+                                <ul class="header-account d-none d-md-block">
+                                    <li class="d-none d-md-inline-block pl-20">
+                                        <a href="login.html" data-toggle="tooltip" data-selector="true"
+                                            data-placement="bottom" title="My Account" class="dark-black-color">
+                                            <span>
+                                                <i class="far fa-user-circle"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                {% if section.settings.mobile_menubar %}
+                                <ul class="mobile-menubar mt-1 info-bar d-flex ml-45">
+                                    <li>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </li>
+                                    <li>
+                                        <span></span>
+                                        <span class="active"></span>
+                                        <span></span>
+                                    </li>
+                                    <li>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </li>
+                                </ul>
+                                {% endif %}
+                            </div>
+                            <!-- /header-right -->
+                        </div>
+                        <!-- /col -->
+                    </div>
+                    <!-- /row -->
+                </div>
+            </div>
+            <!-- /container -->
+        </div>
+    </div>
+    <!-- /header-bottom -->
+</header>
+
+{% schema %}
+{
+"name": "Header",
+"settings": [
+{
+"type": "image_picker",
+"id": "logo",
+"label": "Site Logo"
+},
+{
+"type": "link_list",
+"id": "header_menu",
+"label": "Header Menu",
+"default": "main-menu"
+},
+{
+"type": "checkbox",
+"id": "serach_enable",
+"default": true,
+"label": "Enable Serach Option"
+},
+{
+"type": "checkbox",
+"id": "cart_enable",
+"default": true,
+"label": "Enable Cart"
+},
+{
+"type": "checkbox",
+"id": "wishlist_enable",
+"default": true,
+"label": "Enable Wishlist"
+},
+{
+"type": "checkbox",
+"id": "mobile_menubar",
+"default": true,
+"label": "Enable Mobile Menu Bar"
+}
+]
+}
+{% endschema %}
